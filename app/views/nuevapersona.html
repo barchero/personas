@@ -1,0 +1,42 @@
+<div id="TemplateDetailComponent" class='panel panel-primary' *ngIf="ngForm">
+    <div class='panel-heading'>
+        {{persona.nombre}}
+    </div>
+
+    <form name="personaForm" ng-submit="anadirPersona(personaForm.$valid)" novalidate>
+        <!-- Filter the Products   -->
+        <div class='panel-body'>
+            <div class="form-group" ng-class="personaForm.nombre.$invalid ? 'has-error has-feedback': '' ">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" ng-model="persona.nombre" required>
+                <span ng_show="personaForm.nombre.$invalid" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            </div>
+            <div class="form-group" ng-class="personaForm.edad.$invalid ? 'has-error has-feedback': '' ">
+                <label for="edad">Edad</label>
+                <input type="number" class="form-control" name="edad" id="edad" placeholder="Edad" ng-model="persona.edad" required>
+                <span ng_show="personaForm.edad.$invalid" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            </div>
+            <div class="form-group" ng-class="personaForm.cumpleanos.$invalid ? 'has-error has-feedback': '' ">
+                <label for="cumpleanos">Cumpleaños</label>
+                <input type="date" class="form-control" name="cumpleanos" id="cumpleanos" placeholder="Compleaños" ng-model="persona.cumpleanos" required>
+                <span ng_show="personaForm.cumpleanos.$invalid" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            </div>
+            <div class="form-group" ng-class="personaForm.inversion.$invalid ? 'has-error has-feedback': '' ">
+                <label for="inversion">Inversión</label>
+                <input type="number" min="1" step="any" class="form-control" name="inversion" id="inversion" placeholder="Inversión" ng-model="persona.inversion" required>
+                <span ng_show="personaForm.inversion.$invalid" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            </div>
+            <div class="form-group" ng-class="personaForm.email.$invalid ? 'has-error has-feedback': '' ">
+                <label for="email">E-Mail</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="E-Mail" ng-model="persona.email" required>
+                <span ng_show="personaForm.email.$invalid" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            </div>
+        </div>
+        <div class='panel-footer'>
+            <a class='btn btn-default' href="#!/" style='width:80px'>
+                <i class='glyphicon glyphicon-chevron-left'></i> Volver
+            </a>
+            <button type="submit" class="btn btn-primary pull-right" ng-disabled="personaForm.$invalid">Guardar</button>
+        </div>
+    </form>
+</div>

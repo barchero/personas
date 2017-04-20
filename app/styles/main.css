@@ -1,0 +1,19 @@
+body{
+  padding: 2em;
+}
+.deleteButton{
+  cursor: pointer;
+}
+
+.addButton {
+  color: white;
+  cursor: pointer;
+}
+
+.addButton:hover {
+  color: #ddd;
+}
+
+div.panel-heading {
+  font-size: x-large;
+}

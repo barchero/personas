@@ -1,0 +1,40 @@
+<div class='panel panel-primary'>
+  <div class='panel-heading'>
+    Personas
+    <a class="addButton pull-right" href="#!/nuevaPersona">
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <!-- Filter the Products   -->
+  <div class='panel-body'>
+    <div class='has-error' ng-if='errorMessage'>{{errorMessage}}</div>
+
+    <div class='table-responsive'>
+      <table class='table' ng-if='personas && personas.length'>
+        <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Edad</th>
+          <th>Cumpleaños</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr name="templateList" ng-repeat='(idPersona, persona) in personas'>
+          <td>
+            <a href="#!/detalle/{{idPersona}}">{{persona.nombre}}</a>
+          </td>
+          <td>
+            {{persona.edad}}
+          </td>
+          <td>{{ persona.cumpleanos | date:'dd/MM/yyyy'}}</td>
+          <td><a class="deleteButton" ng-click="eliminarPersona(persona)"><span class="glyphicon glyphicon-trash"></span></a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div id="container" style="min-width: 300px; height: 400px; margin: 0 auto"></div>
